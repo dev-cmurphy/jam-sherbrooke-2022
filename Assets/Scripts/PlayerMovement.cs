@@ -8,11 +8,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody m_rb;
 
     private static PlayerMovement m_instance;
+
+    private PlayerInteraction m_playerInteraction;
     
     private void Awake()
     {
         m_instance = this;
         m_rb = GetComponent<Rigidbody>();
+        m_playerInteraction = GetComponent<PlayerInteraction>();
     }
 
     // Start is called before the first frame update
@@ -24,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_playerInteraction.LockedInInteraction)
+            return;
+
         Vector2 dir = Vector2.zero;
         if (Input.GetKey(KeyCode.W))
         {

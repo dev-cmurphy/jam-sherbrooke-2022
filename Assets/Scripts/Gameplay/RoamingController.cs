@@ -48,17 +48,20 @@ public class RoamingController : MonoBehaviour
 
         m_pointForUsers[owner] = p;
         m_occupiedPoints.Add(p);
-        return Vector3.zero;
+        return p.position;
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         if (m_roamingPoints == null)
             return;
+
+        Color c = m_isEnemyInstance ? Color.red : Color.blue;
+        Gizmos.color = c;
         foreach(var p in m_roamingPoints)
         {
-            Gizmos.DrawSphere(p.position, 0.5f);
+            Gizmos.DrawSphere(p.position, 0.35f);
         }
     }
 #endif
