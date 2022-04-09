@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1eb2984649c3746a456d473f268929, type: 3}
   m_Name: EnemySettings
   m_EditorClassIdentifier: 
-  Sight: 5
-  ChaseDistance: 7
+  Sight: 15
+  ChaseTime: 4
