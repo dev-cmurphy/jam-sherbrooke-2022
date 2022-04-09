@@ -1,0 +1,24 @@
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
+public class Hallucination : MonoBehaviour
+{
+    [SerializeField] private EnemySettings m_settings;
+    private NavMeshAgent m_ai;
+
+    private EnemyState m_state;
+
+    private void Awake()
+    {
+        m_ai = GetComponent<NavMeshAgent>();
+        m_state = new EnemyRoamState(this, m_ai, m_settings);
+    }
+
+    private void Update()
+    {
+        m_state = m_state.Update(PlayerMovement.PlayerPosition);
+    }
+}
+

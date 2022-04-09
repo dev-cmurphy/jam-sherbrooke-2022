@@ -6,9 +6,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 m_inputDirection;
     private Rigidbody m_rb;
+
+    private static PlayerMovement m_instance;
     
     private void Awake()
     {
+        m_instance = this;
         m_rb = GetComponent<Rigidbody>();
     }
 
@@ -53,5 +56,13 @@ public class PlayerMovement : MonoBehaviour
         delta.y = 0;
         delta *= Time.fixedDeltaTime;
         m_rb.MovePosition(transform.position + delta);
+    }
+
+    static public Vector3 PlayerPosition
+    {
+        get
+        {
+            return m_instance.transform.position;
+        }
     }
 }
