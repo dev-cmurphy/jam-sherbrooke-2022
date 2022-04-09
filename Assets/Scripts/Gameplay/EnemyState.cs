@@ -32,17 +32,33 @@ abstract public class EnemyState
 
 public class EnemyRoamState : EnemyState
 {
+    private Vector3 m_currentRoamingDestination;
+
     public EnemyRoamState(Hallucination owner, NavMeshAgent ai, EnemySettings settings) : base(owner, ai, settings)
     {
+        m_currentRoamingDestination = owner.transform.position;
     }
 
     public override EnemyState Update(Vector3 playerPos, float deltaTime)
     {
         if (Time.frameCount % 4 != 0)
             return this;
-        
+       
+        if(m_owner.transform.position.FlatDistance(m_currentRoamingDestination) < 2f)
+        {
+            do
+            {
+                m_currentRoamingDestination = RoamingController.EnemyInstance.AvailableRoamingPoint(m_owner.gameObject);
+            } while (!m_ai.SetDestination(m_currentRoamingDestination));
+
+            Debug.Log("New destination for " + m_owner.name + " : " + m_ai.destination);
+        }
+
+        m_ai.SetDestination(m_currentRoamingDestination);
+
         if (SeesPlayer(playerPos))
         {
+            Debug.Log(m_owner.name + " saw player!");
             return new EnemyChaseState(m_owner, m_ai, m_settings);
         }
         return this;
@@ -79,6 +95,7 @@ public class EnemyChaseState : EnemyState
             return this;
         }
 
+        Debug.Log(m_owner.name + " lost player for a while. Returning to roam.");
         return new EnemyRoamState(m_owner, m_ai, m_settings);
     }
 }

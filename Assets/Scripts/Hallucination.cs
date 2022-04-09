@@ -15,9 +15,9 @@ public class Hallucination : MonoBehaviour
         m_state = new EnemyRoamState(this, m_ai, m_settings);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        m_state = m_state.Update(PlayerMovement.PlayerPosition, Time.deltaTime);
+        m_state = m_state.Update(PlayerMovement.PlayerPosition, Time.fixedDeltaTime);
     }
 }
 
