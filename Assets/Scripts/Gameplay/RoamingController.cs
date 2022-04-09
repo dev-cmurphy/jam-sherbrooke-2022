@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class RoamingController : MonoBehaviour
 {
-    private List<Transform> m_roamingPoints;
+    private List<Transform> m_roamingPoints = new List<Transform>();
     
     private Dictionary<GameObject, Transform> m_pointForUsers;
     private HashSet<Transform> m_occupiedPoints;
@@ -24,6 +24,11 @@ public class RoamingController : MonoBehaviour
         {
             NPCInstance = this;
         }
+    }
+
+    private void Start()
+    {
+        UpdatePoints();
     }
 
     static public RoamingController NPCInstance { get; private set; }
@@ -58,7 +63,7 @@ public class RoamingController : MonoBehaviour
         if (m_roamingPoints == null)
             return;
 
-        Color c = m_isEnemyInstance ? Color.red : Color.blue;
+        Color c = m_isEnemyInstance ? Color.red : Color.cyan;
         Gizmos.color = c;
         foreach(var p in m_roamingPoints)
         {
@@ -68,11 +73,16 @@ public class RoamingController : MonoBehaviour
     
     private void OnValidate()
     {
+        UpdatePoints();
+    }
+#endif
+
+    private void UpdatePoints()
+    {
         m_roamingPoints.Clear();
-        foreach(Transform t in transform)
+        foreach (Transform t in transform)
         {
             m_roamingPoints.Add(t);
         }
     }
-#endif
 }
