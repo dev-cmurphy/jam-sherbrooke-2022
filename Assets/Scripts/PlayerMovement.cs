@@ -28,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (m_playerInteraction.LockedInInteraction)
+        {
+            m_inputDirection = Vector3.zero;
             return;
+        }
 
         Vector2 dir = Vector2.zero;
         if (Input.GetKey(KeyCode.W))
