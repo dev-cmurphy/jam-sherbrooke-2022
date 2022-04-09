@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public class PlayerInteraction : MonoBehaviour
 {
     private FriendlyNPC m_currentlyTargetedNPC;
 
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private UnityEvent m_onInteractionAvailable;
+    [SerializeField] private UnityEvent m_onInteractionUnavailable;
+
+    public bool LockedInInteraction;
+
+    private void Awake()
     {
-        var npc = other.GetComponent<FriendlyNPC>();
-        if(npc != null)
-        {
-            m_currentlyTargetedNPC = npc;
-        }
+        LockedInInteraction = false;
     }
 
     private void Update()
@@ -21,8 +23,25 @@ public class PlayerInteraction : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                m_currentlyTargetedNPC.Interact();
+                if (m_currentlyTargetedNPC.Interact(this))
+                {
+                    // sound bon ?
+                }
+                else
+                {
+                    // sound bad ?
+                }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var npc = other.GetComponent<FriendlyNPC>();
+        if(npc != null && WorldStateController.WorldState == WorldStateController.WORLDSTATE.STATE_SANE)
+        {
+            m_currentlyTargetedNPC = npc;
+            m_onInteractionAvailable?.Invoke();
         }
     }
 
@@ -32,6 +51,7 @@ public class PlayerInteraction : MonoBehaviour
         if (npc == m_currentlyTargetedNPC)
         {
             m_currentlyTargetedNPC = null;
+            m_onInteractionUnavailable?.Invoke();
         }
     }
 }
