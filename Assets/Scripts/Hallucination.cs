@@ -7,7 +7,6 @@ public class Hallucination : MonoBehaviour
 {
     [SerializeField] private EnemySettings m_settings;
     private NavMeshAgent m_ai;
-
     private EnemyState m_state;
 
     private void Awake()
@@ -18,7 +17,7 @@ public class Hallucination : MonoBehaviour
 
     private void Update()
     {
-        m_state = m_state.Update(PlayerMovement.PlayerPosition);
+        m_state = m_state.Update(PlayerMovement.PlayerPosition, Time.deltaTime);
     }
 }
 

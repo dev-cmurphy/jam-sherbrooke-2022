@@ -5,5 +5,5 @@ using System.Collections;
 public class EnemySettings : ScriptableObject
 {
     public float Sight;
-    public float ChaseDistance;
+    public float ChaseTime;
 }
