@@ -44,7 +44,7 @@ public class EnemyRoamState : EnemyState
         if (Time.frameCount % 4 != 0)
             return this;
        
-        if(Vector3.Distance(m_owner.transform.position, m_currentRoamingDestination) < 2f)
+        if(m_owner.transform.position.FlatDistance(m_currentRoamingDestination) < 2f)
         {
             do
             {
