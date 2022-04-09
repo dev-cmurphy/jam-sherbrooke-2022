@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 public class RoamingController : MonoBehaviour
 {
-    [SerializeField] private List<Transform> m_roamingPoints;
+    private List<Transform> m_roamingPoints;
     
     private Dictionary<GameObject, Transform> m_pointForUsers;
     private HashSet<Transform> m_occupiedPoints;
 
+    [SerializeField] private bool m_refresh;
     [SerializeField] private bool m_isEnemyInstance;
 
     private void Awake()
@@ -62,6 +63,15 @@ public class RoamingController : MonoBehaviour
         foreach(var p in m_roamingPoints)
         {
             Gizmos.DrawSphere(p.position, 0.35f);
+        }
+    }
+    
+    private void OnValidate()
+    {
+        m_roamingPoints.Clear();
+        foreach(Transform t in transform)
+        {
+            m_roamingPoints.Add(t);
         }
     }
 #endif
