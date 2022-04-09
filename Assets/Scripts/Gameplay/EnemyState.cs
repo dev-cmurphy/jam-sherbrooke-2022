@@ -32,15 +32,24 @@ abstract public class EnemyState
 
 public class EnemyRoamState : EnemyState
 {
+    private Vector3 m_currentRoamingDestination;
+
     public EnemyRoamState(Hallucination owner, NavMeshAgent ai, EnemySettings settings) : base(owner, ai, settings)
     {
+        m_currentRoamingDestination = owner.transform.position;
     }
 
     public override EnemyState Update(Vector3 playerPos, float deltaTime)
     {
         if (Time.frameCount % 4 != 0)
             return this;
-        
+       
+        if(Vector3.Distance(m_owner.transform.position, m_currentRoamingDestination) < 0.5f)
+        {
+            m_ai.destination = RoamingController.EnemyInstance.AvailableRoamingPoint(m_owner.gameObject);
+            Debug.Log("New destination for " + m_owner.name + " : " + m_ai.destination);
+        }
+
         if (SeesPlayer(playerPos))
         {
             return new EnemyChaseState(m_owner, m_ai, m_settings);
