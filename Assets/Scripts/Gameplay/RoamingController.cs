@@ -54,6 +54,8 @@ public class RoamingController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
+        if (m_roamingPoints == null)
+            return;
         foreach(var p in m_roamingPoints)
         {
             Gizmos.DrawSphere(p.position, 0.5f);

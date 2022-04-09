@@ -44,14 +44,21 @@ public class EnemyRoamState : EnemyState
         if (Time.frameCount % 4 != 0)
             return this;
        
-        if(Vector3.Distance(m_owner.transform.position, m_currentRoamingDestination) < 0.5f)
+        if(Vector3.Distance(m_owner.transform.position, m_currentRoamingDestination) < 2f)
         {
-            m_ai.destination = RoamingController.EnemyInstance.AvailableRoamingPoint(m_owner.gameObject);
+            do
+            {
+                m_currentRoamingDestination = RoamingController.EnemyInstance.AvailableRoamingPoint(m_owner.gameObject);
+            } while (!m_ai.SetDestination(m_currentRoamingDestination));
+
             Debug.Log("New destination for " + m_owner.name + " : " + m_ai.destination);
         }
 
+        m_ai.SetDestination(m_currentRoamingDestination);
+
         if (SeesPlayer(playerPos))
         {
+            Debug.Log(m_owner.name + " saw player!");
             return new EnemyChaseState(m_owner, m_ai, m_settings);
         }
         return this;
@@ -88,6 +95,7 @@ public class EnemyChaseState : EnemyState
             return this;
         }
 
+        Debug.Log(m_owner.name + " lost player for a while. Returning to roam.");
         return new EnemyRoamState(m_owner, m_ai, m_settings);
     }
 }
