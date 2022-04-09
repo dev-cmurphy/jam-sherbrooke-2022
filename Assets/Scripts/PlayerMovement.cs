@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float m_speed;
+    [SerializeField] private float m_slowSpeed;
+
+    private bool m_isSlowed;
 
     private Vector3 m_inputDirection;
     private Rigidbody m_rb;
@@ -10,12 +14,22 @@ public class PlayerMovement : MonoBehaviour
     private static PlayerMovement m_instance;
 
     private PlayerInteraction m_playerInteraction;
-    
+
+    public void SlowDown()
+    {
+        m_isSlowed = true;
+    }
+
     private void Awake()
     {
         m_instance = this;
         m_rb = GetComponent<Rigidbody>();
         m_playerInteraction = GetComponent<PlayerInteraction>();
+    }
+
+    public void RemoveSlow()
+    {
+        m_isSlowed = false;
     }
 
     // Start is called before the first frame update
@@ -60,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 delta = m_inputDirection * m_speed;
+        Vector3 delta = m_inputDirection * (m_isSlowed ? m_slowSpeed : m_speed);
         delta.z = delta.y;
         delta.y = 0;
         delta *= Time.fixedDeltaTime;
