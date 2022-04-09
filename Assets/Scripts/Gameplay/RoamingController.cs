@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class RoamingController : MonoBehaviour
 {
-    private List<Transform> m_roamingPoints;
+    private List<Transform> m_roamingPoints = new List<Transform>();
     
     private Dictionary<GameObject, Transform> m_pointForUsers;
     private HashSet<Transform> m_occupiedPoints;
