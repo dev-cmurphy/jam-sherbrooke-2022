@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8241681455248134614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event 2/Enemy
+  m_EditorClassIdentifier: 
+  Name: Enemy
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1083294325
+    data2: 3970160792
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-3585110484676857822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: "../../Th\xE8me Insane/Fmod/Th\xE8me Insane/Build/Desktop/Master.strings.bank"
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637850961443461451
+  FileSizes:
+  - Name: Desktop
+    Value: 890
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -3585110484676857822}
+  - {fileID: 5718905846464408329}
+  - {fileID: 7802166373836136591}
+  EditorEvents:
+  - {fileID: 6933463697646211487}
+  EditorParameters:
+  - {fileID: 8619592018931338301}
+  MasterBanks:
+  - {fileID: 5718905846464408329}
+  StringsBanks:
+  - {fileID: -3585110484676857822}
+  cacheTime: 637850961443481454
+  cacheVersion: 10
+--- !u!114 &5718905846464408329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: "../../Th\xE8me Insane/Fmod/Th\xE8me Insane/Build/Desktop/Master.bank"
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637850961443451449
+  FileSizes:
+  - Name: Desktop
+    Value: 918080
+  Exists: 1
+--- !u!114 &6933463697646211487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Musics/Th\xE8me Insane/New Event 2"
+  m_EditorClassIdentifier: 
+  Path: "event:/Musics/Th\xE8me Insane/New Event 2"
+  Guid:
+    Data1: -944475909
+    Data2: 1290827220
+    Data3: -1364733045
+    Data4: -1157087923
+  Banks:
+  - {fileID: 5718905846464408329}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8241681455248134614}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 172800
+--- !u!114 &7802166373836136591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: "bank:/Th\xE8me Insane.bank"
+  m_EditorClassIdentifier: 
+  Path: "../../Th\xE8me Insane/Fmod/Th\xE8me Insane/Build/Desktop/Th\xE8me Insane.bank"
+  Name: "Th\xE8me Insane"
+  StudioPath: "bank:/Musics/Th\xE8me Insane"
+  lastModified: 637850961443481454
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &8619592018931338301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Enemy
+  m_EditorClassIdentifier: 
+  Name: Enemy
+  StudioPath: parameter:/Enemy
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1083294325
+    data2: 3970160792
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
