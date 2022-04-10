@@ -11,12 +11,16 @@ public class WorldStateController : MonoBehaviour
     }
 
     public static WORLDSTATE WorldState { get; private set; }
+    
 
     public static UnityEvent OnSwitchToSane = new UnityEvent();
     public static UnityEvent OnSwitchToMad = new UnityEvent();
 
     [SerializeField] private UnityEvent OnInstanceSwitchToSane;
     [SerializeField] private UnityEvent OnInstanceSwitchToMad;
+    [SerializeField] private UnityEvent On2fSwitchToSane;
+    [SerializeField] private UnityEvent On2fSwitchToMad;
+
 
     [Min(0)]
     [SerializeField] private float m_saneTime = 10f;
@@ -32,7 +36,17 @@ public class WorldStateController : MonoBehaviour
     {
         while(gameObject.activeSelf)
         {
+            if (WorldState == WORLDSTATE.STATE_MAD)
+            {
+                On2fSwitchToSane?.Invoke();
+            }
+            else if (WorldState == WORLDSTATE.STATE_SANE)
+            {
+                On2fSwitchToMad?.Invoke();
+            }
+
             float waitTime = 0f;
+            yield return new WaitForSeconds(3f);
             if(WorldState == WORLDSTATE.STATE_MAD)
             {
                 WorldState = WORLDSTATE.STATE_SANE;
