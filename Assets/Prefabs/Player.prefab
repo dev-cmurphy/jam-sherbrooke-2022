@@ -479,7 +479,6 @@ GameObject:
   - component: {fileID: 2557503481002864404}
   - component: {fileID: 2975693268831434316}
   - component: {fileID: 2141807923}
-  - component: {fileID: 6025587662297120411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -518,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 6
-  m_slowSpeed: 0
+  m_slowSpeed: 3
 --- !u!54 &2557503481002864404
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -591,26 +590,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   LockedInInteraction: 0
---- !u!95 &6025587662297120411
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2557503481002864395}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2351787557809068310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,3 +665,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2351787557809068310}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3198210508405187655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a85b48b92f864cf41a15469714a0360e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2351787557809068310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5596211997632944774
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198210508405187655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5d7ffb78edaffb4e9c242651d2580b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
