@@ -48,7 +48,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-4920581851291412395
+--- !u!114 &-5592944688017097821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,15 +58,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: "bank:/Th\xE8me Insane.bank"
   m_EditorClassIdentifier: 
-  Path: ../../Fmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637851344789650504
+  Path: "FMODProject/Build/Desktop/Th\xE8me Insane.bank"
+  Name: "Th\xE8me Insane"
+  StudioPath: "bank:/Musics/Th\xE8me Insane"
+  lastModified: 637851360066948093
   FileSizes:
   - Name: Desktop
-    Value: 2830592
+    Value: 494
   Exists: 1
 --- !u!114 &-2596428310791406953
 MonoBehaviour:
@@ -105,19 +105,19 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5036510705109728765}
-  - {fileID: -4920581851291412395}
-  - {fileID: 2616450477529569492}
+  - {fileID: 3297282562383427671}
+  - {fileID: 6208505503699044903}
+  - {fileID: -5592944688017097821}
   EditorEvents:
   - {fileID: 778883731971030553}
   - {fileID: 5512320981093929805}
   EditorParameters:
   - {fileID: 8619592018931338301}
   MasterBanks:
-  - {fileID: -4920581851291412395}
+  - {fileID: 6208505503699044903}
   StringsBanks:
-  - {fileID: 5036510705109728765}
-  cacheTime: 637851344789680505
+  - {fileID: 3297282562383427671}
+  cacheTime: 637851360066948093
   cacheVersion: 10
 --- !u!114 &778883731971030553
 MonoBehaviour:
@@ -138,7 +138,7 @@ MonoBehaviour:
     Data3: -1915992414
     Data4: 1565811585
   Banks:
-  - {fileID: -4920581851291412395}
+  - {fileID: 6208505503699044903}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -147,27 +147,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22000
---- !u!114 &2616450477529569492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: "bank:/Th\xE8me Insane.bank"
-  m_EditorClassIdentifier: 
-  Path: "../../Fmod/Build/Desktop/Th\xE8me Insane.bank"
-  Name: "Th\xE8me Insane"
-  StudioPath: "bank:/Musics/Th\xE8me Insane"
-  lastModified: 637851344789680505
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
---- !u!114 &5036510705109728765
+--- !u!114 &3297282562383427671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,10 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../Fmod/Build/Desktop/Master.strings.bank
+  Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637851344789670502
+  lastModified: 637851360066948093
   FileSizes:
   - Name: Desktop
     Value: 990
@@ -206,7 +186,7 @@ MonoBehaviour:
     Data3: -1364733045
     Data4: -1157087923
   Banks:
-  - {fileID: -4920581851291412395}
+  - {fileID: 6208505503699044903}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -216,6 +196,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 201841
+--- !u!114 &6208505503699044903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODProject/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637851360066938123
+  FileSizes:
+  - Name: Desktop
+    Value: 2830592
+  Exists: 1
 --- !u!114 &8619592018931338301
 MonoBehaviour:
   m_ObjectHideFlags: 0
