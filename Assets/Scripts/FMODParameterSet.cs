@@ -20,11 +20,13 @@ public class FMODParameterSet : MonoBehaviour
 
     public void SetParameter(int value, int _)
     {
+        m_emitter.EventInstance.setVolume(1f);
         m_emitter.SetParameter(m_defaultParam, value);
     }
 
     public void SetGlobalParameter(int value)
     {
+        m_emitter.EventInstance.setVolume(0.7f);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName(m_defaultGlobalParam, value);
     }
 }

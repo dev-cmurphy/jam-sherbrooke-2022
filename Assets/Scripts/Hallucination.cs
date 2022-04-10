@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Hallucination : MonoBehaviour
@@ -8,6 +9,10 @@ public class Hallucination : MonoBehaviour
     [SerializeField] private EnemySettings m_settings;
     private NavMeshAgent m_ai;
     private EnemyState m_state;
+
+    static HashSet<Hallucination> cluster = new HashSet<Hallucination>();
+
+    public FMODParameterSet ParamSon;
 
     private void Awake()
     {
@@ -17,6 +22,22 @@ public class Hallucination : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (transform.position.FlatDistance(PlayerMovement.PlayerPosition) < 8 && !cluster.Contains(this))
+        {
+            cluster.Add(this);
+        }
+
+        if(cluster.Count > 0)
+        {
+            
+            ParamSon.SetGlobalParameter(1);
+        }
+        else
+        {
+
+            ParamSon.SetGlobalParameter(0);
+        }
+
         m_state = m_state.Update(PlayerMovement.PlayerPosition, Time.fixedDeltaTime);
     }
 
