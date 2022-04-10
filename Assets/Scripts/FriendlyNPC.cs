@@ -44,8 +44,9 @@ public class FriendlyNPC : DualEntity
         if (!m_ai.enabled)
             return;
 
-        if (transform.position.FlatDistance(PlayerMovement.PlayerPosition) > m_playerAvoidanceRadius)
+        if (transform.position.FlatDistance(PlayerMovement.PlayerPosition) < m_playerAvoidanceRadius)
         {
+            // avoid player
 
         }
 

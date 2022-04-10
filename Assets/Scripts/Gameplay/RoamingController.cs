@@ -34,12 +34,28 @@ public class RoamingController : MonoBehaviour
     static public RoamingController NPCInstance { get; private set; }
     static public RoamingController EnemyInstance { get; private set; }
 
-    public Vector3 AvailableRoamingPoint(GameObject owner)
+    public Vector3 AvailableRoamingPoint(GameObject owner, Vector3? positionToAvoid = null, bool proximityBias = true)
     {
+        if(positionToAvoid != null)
+        {
+            m_roamingPoints.Sort((x, y) => -x.position.FlatDistance(positionToAvoid.Value).
+                CompareTo(y.position.FlatDistance(positionToAvoid.Value)));
+        }
+
         if (m_pointForUsers.ContainsKey(owner))
         {
             m_occupiedPoints.Remove(m_pointForUsers[owner]);
             m_pointForUsers.Remove(owner);
+        }
+
+        if(proximityBias)
+        {
+            m_roamingPoints.Sort((x, y) => x.position.FlatDistance(owner.transform.position).
+                CompareTo(y.position.FlatDistance(owner.transform.position)));
+        }
+        else
+        {
+            m_roamingPoints.Sort((x, y) => Random.Range(-1, 2));
         }
 
         Transform p = null;
