@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4e2a5aff-e1b2-46d5-94d8-a149e7252380}">
+		<property name="assetPath">
+			<value>Thème Sane.démo.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>116.00002083333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58c33385-8b81-4087-a11c-1fc5159c9f91}</destination>
+		</relationship>
+	</object>
+</objects>
