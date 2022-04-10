@@ -114,12 +114,13 @@ public class FriendlyNPC : DualEntity
         player.LockedInInteraction = false;
         if (t >= interactionTime)
         {
-            CompleteInteraction();
+            CompleteInteraction(player.GetComponent<PlayerPointsAndLife>());
         }
     }
     
-    private void CompleteInteraction()
+    private void CompleteInteraction(PlayerPointsAndLife p)
     {
+        p.GainPoints(10);
         Debug.Log("Player completed interaction with " + name);
     }
 

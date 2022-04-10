@@ -25,6 +25,6 @@ public class FMODParameterSet : MonoBehaviour
 
     public void SetGlobalParameter(int value)
     {
-
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(m_defaultGlobalParam, value);
     }
 }

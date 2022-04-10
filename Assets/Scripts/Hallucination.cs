@@ -19,5 +19,15 @@ public class Hallucination : MonoBehaviour
     {
         m_state = m_state.Update(PlayerMovement.PlayerPosition, Time.fixedDeltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var p = other.GetComponent<PlayerPointsAndLife>();
+
+        if(p != null)
+        {
+            p.Damage(Random.Range(4, 9));
+        }
+    }
 }
 
