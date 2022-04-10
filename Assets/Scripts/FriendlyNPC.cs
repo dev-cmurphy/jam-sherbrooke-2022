@@ -47,7 +47,6 @@ public class FriendlyNPC : DualEntity
     {
         if (!m_ai.enabled)
             return;
-
         
         if (transform.position.FlatDistance(PlayerMovement.PlayerPosition) < m_playerAvoidanceRadius)
         {
@@ -62,7 +61,7 @@ public class FriendlyNPC : DualEntity
         }
         else
         {
-            m_ai.speed = 8f;
+            m_ai.speed = 5f;
             needToFlee = false;
         }
 

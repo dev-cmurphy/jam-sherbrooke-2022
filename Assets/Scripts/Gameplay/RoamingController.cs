@@ -36,23 +36,18 @@ public class RoamingController : MonoBehaviour
 
     public Vector3 AvailableRoamingPoint(GameObject owner, Vector3? positionToAvoid = null, bool proximityBias = true)
     {
-        if(positionToAvoid != null)
-        {
-            m_roamingPoints.Sort((x, y) => -x.position.FlatDistance(positionToAvoid.Value).
-                CompareTo(y.position.FlatDistance(positionToAvoid.Value)));
-        }
-        else
-        {
-            m_roamingPoints.Sort((x, y) => Random.Range(-1, 2));
-        }
-
         if (m_pointForUsers.ContainsKey(owner))
         {
             m_occupiedPoints.Remove(m_pointForUsers[owner]);
             m_pointForUsers.Remove(owner);
         }
 
-        if(proximityBias)
+        if (positionToAvoid != null)
+        {
+            m_roamingPoints.Sort((x, y) => -x.position.FlatDistance(positionToAvoid.Value).
+                CompareTo(y.position.FlatDistance(positionToAvoid.Value)));
+        }
+        else if (proximityBias)
         {
             m_roamingPoints.Sort((x, y) => x.position.FlatDistance(owner.transform.position).
                 CompareTo(y.position.FlatDistance(owner.transform.position)));
