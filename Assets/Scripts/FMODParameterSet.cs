@@ -1,18 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FMODUnity;
 
 public class FMODParameterSet : MonoBehaviour
 {
+    [SerializeField] private StudioEventEmitter m_emitter;
 
-    // Use this for initialization
-    void Start()
+    [SerializeField] private string m_defaultParam, m_defaultGlobalParam;
+
+    public void SetParameter(string param, int value)
     {
-
+        m_emitter.SetParameter(param, value);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetParameter(int value)
     {
+        m_emitter.SetParameter(m_defaultParam, value);
+    }
 
+    public void SetParameter(int value, int _)
+    {
+        m_emitter.SetParameter(m_defaultParam, value);
+    }
+
+    public void SetGlobalParameter(int value)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(m_defaultGlobalParam, value);
+    }
+
+    public void SetVolume(float f)
+    {
+        m_emitter.EventInstance.setVolume(f);
     }
 }
