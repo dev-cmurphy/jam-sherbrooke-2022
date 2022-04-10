@@ -26,6 +26,8 @@ public class FriendlyNPC : DualEntity
         if (!m_ai.enabled)
             return;
 
+        m_ai.speed = 3.5f;
+
         if (transform.position.FlatDistance(m_currentRoamingDestination) < 0.5f)
         {
             do
@@ -39,28 +41,54 @@ public class FriendlyNPC : DualEntity
         m_ai.SetDestination(m_currentRoamingDestination);
     }
 
+    bool needToFlee = false;
+
     protected override void MadUpdate()
     {
         if (!m_ai.enabled)
             return;
 
+        
         if (transform.position.FlatDistance(PlayerMovement.PlayerPosition) < m_playerAvoidanceRadius)
         {
-            // avoid player
-
+            if (!needToFlee)
+            {
+                Debug.Log("NEED TO FLEE!");
+                // avoid player
+                FindNewDestination(true);
+                needToFlee = true;
+                m_ai.speed = 11f;
+            }
+        }
+        else
+        {
+            m_ai.speed = 8f;
+            needToFlee = false;
         }
 
         if (transform.position.FlatDistance(m_currentRoamingDestination) < 0.5f)
         {
-            do
-            {
-                m_currentRoamingDestination = RoamingController.NPCInstance.AvailableRoamingPoint(gameObject);
-            } while (!m_ai.SetDestination(m_currentRoamingDestination));
-
-            Debug.Log("New destination for " + name + " : " + m_ai.destination);
+            FindNewDestination();
         }
 
         m_ai.SetDestination(m_currentRoamingDestination);
+    }
+
+    private void FindNewDestination(bool avoid = false)
+    {
+        do
+        {
+            if (avoid)
+            {
+                m_currentRoamingDestination = RoamingController.NPCInstance.AvailableRoamingPoint(gameObject, PlayerMovement.PlayerPosition);
+            }
+            else
+            {
+                m_currentRoamingDestination = RoamingController.NPCInstance.AvailableRoamingPoint(gameObject);
+            }
+        } while (!m_ai.SetDestination(m_currentRoamingDestination));
+
+        Debug.Log("New destination for " + name + " : " + m_ai.destination);
     }
 
     public bool Interact(PlayerInteraction player)

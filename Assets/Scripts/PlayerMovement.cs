@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float m_speed;
     [SerializeField] private float m_slowSpeed;
 
+    [SerializeField] private GameObject m_mesh;
+
     private bool m_isSlowed;
 
     private Vector3 m_inputDirection;
@@ -41,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_inputDirection.sqrMagnitude > 0)
+        {
+            float rotation = Mathf.Atan2(m_inputDirection.x, m_inputDirection.y);
+            m_mesh.transform.rotation = Quaternion.Lerp(m_mesh.transform.rotation, Quaternion.Euler(0, 180 + (rotation * Mathf.Rad2Deg), 0), Time.deltaTime * 5f);
+        }
+
         if (m_playerInteraction.LockedInInteraction)
         {
             m_inputDirection = Vector3.zero;

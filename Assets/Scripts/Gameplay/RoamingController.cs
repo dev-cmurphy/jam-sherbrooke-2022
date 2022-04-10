@@ -41,6 +41,10 @@ public class RoamingController : MonoBehaviour
             m_roamingPoints.Sort((x, y) => -x.position.FlatDistance(positionToAvoid.Value).
                 CompareTo(y.position.FlatDistance(positionToAvoid.Value)));
         }
+        else
+        {
+            m_roamingPoints.Sort((x, y) => Random.Range(-1, 2));
+        }
 
         if (m_pointForUsers.ContainsKey(owner))
         {
