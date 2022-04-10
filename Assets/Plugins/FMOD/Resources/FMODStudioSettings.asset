@@ -463,8 +463,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: "../../Th\xE8me Insane/Fmod/Th\xE8me Insane/Th\xE8me Insane.fspro"
-  sourceBankPath: "../../Th\xE8me Insane/Fmod/Th\xE8me Insane/Build"
+  sourceProjectPath: "FMODProject/Th\xE8me Insane.fspro"
+  sourceBankPath: FMODProject/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -501,8 +501,8 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131588
-  HideSetupWizard: 0
-  LastEventReferenceScanVersion: 0
+  HideSetupWizard: 1
+  LastEventReferenceScanVersion: 131588
   Platforms:
   - {fileID: -8932543671750837380}
   - {fileID: 5688532417189766722}

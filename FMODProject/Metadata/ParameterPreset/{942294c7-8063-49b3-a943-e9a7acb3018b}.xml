@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{942294c7-8063-49b3-a943-e9a7acb3018b}">
+		<property name="name">
+			<value>Enemy</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b88c33c3-80c2-4354-b075-c2c068c84703}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b0e0332f-e6fd-4f23-b64a-f09fdc1c74d7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b0e0332f-e6fd-4f23-b64a-f09fdc1c74d7}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
