@@ -29,12 +29,13 @@ public class Hallucination : MonoBehaviour
 
         if(cluster.Count > 0)
         {
-            
+
+            ParamSon.SetVolume(0.5f);
             ParamSon.SetGlobalParameter(1);
         }
         else
         {
-
+            ParamSon.SetVolume(1f);
             ParamSon.SetGlobalParameter(0);
         }
 
