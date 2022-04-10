@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 0b4e99dcd0a6abd448c505c73c78a30e
+guid: c855f7251e5ee7d4399558f57a327ac8
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -42,8 +45,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0

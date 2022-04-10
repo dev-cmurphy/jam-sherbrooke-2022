@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9218240740185034233}
   - component: {fileID: 9218240740185034234}
-  - component: {fileID: 9218240740185034235}
   - component: {fileID: 9218240740185034232}
+  - component: {fileID: 1484916038685754443}
   m_Layer: 7
   m_Name: BuildingMad
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9218240740185034238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.431209, y: 0.5384544, z: 6.9769316}
+  m_LocalPosition: {x: 11.431209, y: -12.1, z: 6.9769316}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -77,19 +77,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9218240740185034235
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9218240740185034238}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &9218240740185034232
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -106,6 +93,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &1484916038685754443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218240740185034238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.9195136, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8238240737279352238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,12 +141,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d31d657caa52bf94ab2dda935ce2e10c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.287542
+      value: 3.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d31d657caa52bf94ab2dda935ce2e10c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.122824065
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d31d657caa52bf94ab2dda935ce2e10c,
         type: 3}
