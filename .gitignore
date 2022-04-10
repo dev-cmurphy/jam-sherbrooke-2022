@@ -80,3 +80,7 @@ fmod_editor.log
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
 
+
+FMODProject/Build/
+
+FMODProject/.cache/
